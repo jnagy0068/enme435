@@ -11,7 +11,9 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 
-# enme435burner@gmail.com:apasswordofalltime123
+# smartdoorbellenme435@gmail.com
+# smartdoorbell12
+# mfhs hrfy zsxj rbqi 
 
 def select_points(img): # for initial mask point selection
     points = []
@@ -25,28 +27,18 @@ def select_points(img): # for initial mask point selection
 
 def mask_image(img):
     mask = np.zeros((img.shape[0], img.shape[1]), dtype="uint8")
-
-    # final selected points for porch
-    # pts = np.array([[553, 707], [700, 650], [843, 550], [833, 124], [1100, 109], [1100, 619], [906, 700]], dtype=np.int32) # mitchell's array
-    pts = np.array([[385, 16], [854, 20], [904, 655], [434, 673]], dtype=np.int32) # my array
+    pts = np.array([[385, 16], [854, 20], [904, 655], [434, 673]], dtype=np.int32) # mask points
     cv2.fillConvexPoly(mask, pts, 255)
-
     # pts = np.array([[553, 707], [300, 600], [400, 590], [550, 650]], dtype=np.int32) # walkway coordinates
     # cv2.fillConvexPoly(mask, pts, 255)
-
     masked = cv2.bitwise_and(img, img, mask=mask)
-
     gray = cv2.resize(masked, (200, int(masked.shape[0] * 200 / masked.shape[1])))
-
     gray = cv2.cvtColor(gray, cv2.COLOR_BGR2GRAY)
-
-    gray = cv2.GaussianBlur(gray, (11, 11), 0) # play with kernel size
-
+    gray = cv2.GaussianBlur(gray, (11, 11), 0) # kernel size
     return masked, gray
 
-# Counter variable for analysis
-counter = 0
-
+# keep looping
+counter = -1
 # Mask calibration
 # img = cv2.imread("calibration.jpg")
 # select_points(img)
@@ -56,9 +48,9 @@ try:
         if cv2.waitKey(1) == ord('q'):
             break
 
-        counter += 1
+        counter = counter + 1
         print(" ")
-        print("----Times through loop since starting:", counter, "----")
+        print("Times through loop since starting:", counter)
         print(" ")
 
         # take a 1st and 2nd image to compare
@@ -123,10 +115,10 @@ try:
             os.system(command4)
 
             # send email to user
-            smtpUser = 'enme435burner@gmail.com'
-            smtpPass = 'vizp isjl dhdr kybp'
+            smtpUser = 'smartdoorbellenme435@gmail.com'
+            smtpPass = 'mfhs hrfy zsxj rbqi'
 
-            toAdd = 'shanayk@umd.edu'
+            toAdd = 'jnagy@umd.edu'
             fromAdd = smtpUser
 
             f_time = datetime.now().strftime('%a %d %b @ %H:%M')
@@ -181,4 +173,3 @@ try:
             print("Nothing detected...yet!")
 except KeyboardInterrupt:
     print("Stopped")
-    
