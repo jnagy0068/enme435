@@ -104,6 +104,7 @@ try:
             test1 = capture_frame(picam2)
             time.sleep(2)
             test2 = capture_frame(picam2)
+            cv2.imshow("Smart Doorbell", test2)
 
             # write all images to file for email attachment
             cv2.imwrite("test1.jpg",   test1)
