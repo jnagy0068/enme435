@@ -172,7 +172,7 @@ try:
 
             # send email to user
             smtpUser = 'smartdoorbellenme435@gmail.com'
-            smtpPass = 'mfhs hrfy zsxj rbqi'
+            smtpPass = 'pdzs nuun whus xebf'
 
             toAdd = 'jnagy@terpmail.umd.edu'
             fromAdd = smtpUser
