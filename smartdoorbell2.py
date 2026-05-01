@@ -16,6 +16,7 @@ from picamera2 import Picamera2
 # smartdoorbellenme435@gmail.com
 # smartdoorbell12
 # mfhs hrfy zsxj rbqi
+# jnagy@terpmail.umd.edu
 
 # --- Video recording setup ---
 VIDEO_FPS = 20
