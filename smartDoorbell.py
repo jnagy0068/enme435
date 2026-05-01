@@ -15,6 +15,7 @@ from picamera2 import Picamera2
 # smartdoorbellenme435@gmail.com
 # smartdoorbell12
 # mfhs hrfy zsxj rbqi
+# yvob rmgy txfv odrf
 
 def capture_frame(picam2):
     """Capture a frame directly into a BGR numpy array (no temp file)."""
@@ -121,9 +122,9 @@ try:
 
             # send email to user
             smtpUser = 'smartdoorbellenme435@gmail.com'
-            smtpPass = 'mfhs hrfy zsxj rbqi'
+            smtpPass = 'yvob rmgy txfv odrf'
 
-            toAdd = 'jnagy@umd.edu'
+            toAdd = 'jnagy@terpmail.umd.edu'
             fromAdd = smtpUser
 
             f_time = datetime.now().strftime('%a %d %b @ %H:%M')
