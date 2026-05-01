@@ -14,7 +14,6 @@ from picamera2 import Picamera2
 
 # smartdoorbellenme435@gmail.com
 # smartdoorbell12
-# mfhs hrfy zsxj rbqi
 # yvob rmgy txfv odrf
 
 def capture_frame(picam2):
