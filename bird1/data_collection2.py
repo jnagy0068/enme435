@@ -46,7 +46,6 @@ while True:
     d = int(d)
     filename = "%d.jpg" % d
     cv2.imwrite(filename, image)
-    os.system('mv ' + filename + ' /home/jnagy/ENME435/HW/HW7/images')
 
     print(f"Image saved for angle {d}. Ready for next capture.")
 
