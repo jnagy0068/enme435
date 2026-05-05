@@ -1,4 +1,4 @@
-# ENME489Y: Remote Sensing
+data_collection2.py# ENME489Y: Remote Sensing
 
 # import the necessary packages
 import numpy as np
