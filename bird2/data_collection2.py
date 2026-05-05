@@ -10,11 +10,18 @@ from picamera2 import Picamera2
 picam2 = Picamera2()
 config = picam2.create_still_configuration(main={"size": (1280, 720)})
 picam2.configure(config)
-picam2.set_controls({"ExposureTime": 6000000, "Contrast": 1.0})
 
 # Allow camera to warm up once
 picam2.start()
 time.sleep(2)
+
+# Set controls after start, then wait for them to take effect
+picam2.set_controls({"AeEnable": False, "ExposureTime": 6000000, "AnalogueGain": 1.0, "Contrast": 1.0})
+time.sleep(2)
+
+# Check actual exposure time being used
+metadata = picam2.capture_metadata()
+print("Actual exposure time:", metadata["ExposureTime"])
 
 while True:
     # Enter IMU angle from user
